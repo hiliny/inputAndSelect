@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.input-select-container{
+	position: absolute;
+	overflow: auto;
+	display: none;
+	border: 1px solid rgb(204,204,204);
+	background-color: white;
+	z-index: 19900417;
+}
+
+.input-select-container ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.input-select-container ul li{
+	list-style: none;
+	line-height: 22px;
+	vertical-align: middle;
+	text-align: left;
+	padding: 0px 3px;
+	cursor: pointer;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.input-select-container ul li.active{
+	background-color: #2395d2;
+}
+
+.input-select-container ul li:hover{
+	background-color: #ddd;
+}
+
