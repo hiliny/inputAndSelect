@@ -1,0 +1,36 @@
+﻿<tr class="template-upload fade in" id="<%= id %>">
+    <td style="vertical-align: middle; width: 180px; height: 30px">
+        <%=fileName%>
+    </td>
+    <td style="vertical-align: middle; width: 80px; height: 30px">
+        <%=fileSize%>
+        KB
+    </td>
+    <td style="vertical-align: middle; width: 80px; height: 30px">
+        <!--        <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="<%= isnew? '0' : '100'%>" style="margin-bottom:auto">
+            <div class="bar" <if(isnew){ %> style="width:0%" <}else{%> style="width:100%" <} %>></div>
+        </div> -->
+        <%if(isnew){%>
+        <span class="fileState" style="color: Red">等待上传</span>
+        <%}else{%>
+        <span class="fileState" style="color: Green">正常</span>
+        <%}%>
+    </td>
+    <td style="vertical-align: middle; width: 80px; height: 30px">
+        <%= uploader%>
+    </td>
+    <td style="vertical-align: middle; width: 100px; height: 30px">
+        <%= uploadTime%>
+    </td>
+    <td style="vertical-align: middle; width: 80px; height: 30px">
+        <!--
+        <a class="deleteAtServer" style="<= (enableDelete && !isnew)?'':'display:none;' %>cursor:pointer;padding:0px;margin:0px">删除</a>
+        <a class="downloadFromServer" href="<= url %>" target="_blank"  style="<= (enableDownload || isnew)?'display:none;':'' %>cursor:pointer;padding:0px;margin:0px">下载</a>
+        -->
+        <a class="deleteAtServer" <%if(enableDelete && !isnew){ %> style="cursor: pointer"
+            <%}else{ %> style="display: none; cursor: pointer" <%}%>>删除</a> <a class="downloadFromServer"
+                href="<%=url %>" target="_blank" <%if(enableDownload && !isnew){%> style="cursor: pointer"
+                <%}else{%> style="display: none" <%}%>>下载</a> <a class="cancleUpload" <%if(!isnew){%>
+                    style="display: none" <%}else{%> style="cursor: pointer" <%}%>>取消上传</a>
+    </td>
+</tr>

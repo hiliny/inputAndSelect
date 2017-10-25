@@ -1,0 +1,24 @@
+﻿<tr class="template-upload fade in" id="<%= id %>"> 
+    <td style="vertical-align:middle;width:180px;height:30px"> 
+        <%=fileName%>
+        <%if(!allowedFile){%>
+		</br>
+		<span style="color:red">(不允许的文件类型)</span>
+        <%}%>		
+    </td> 
+    <td style="vertical-align:middle;width:80px;height:30px"> 
+        <%=fileSize%> KB
+    </td> 
+    <td style="vertical-align:middle;width:80px;height:30px"> 
+        <%if(isnew){%>
+        <span class="fileState" style="color:Red">等待上传</span>
+        <%}else{%>
+        <span class="fileState" style="color:Green">正常</span>
+        <%}%>
+    </td> 
+    <td style="vertical-align:middle;width:80px;height:30px">
+        <a class="deleteAtServer" <%if(enableDelete && !isnew){ %> style="cursor:pointer" <%}else{ %> style="display:none;cursor:pointer" <%}%>>删除</a>
+        <a class="downloadFromServer" href="<%=url %>" target="_blank" <%if(enableDownload && !isnew){%> style="cursor:pointer" <%}else{%> style="display:none" <%}%>>下载</a>
+        <a class="cancleUpload" <%if(!isnew){%> style="display:none"<%}else{%> style="cursor:pointer" <%}%> >取消上传</a>
+    </td>
+</tr>

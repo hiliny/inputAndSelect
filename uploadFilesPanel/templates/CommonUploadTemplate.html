@@ -1,0 +1,51 @@
+﻿<div class="modal hide fade divmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="width: 700px !important">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×</button>
+        <span style="font-size: 15px;">
+            <%=title%></span>
+    </div>
+    <div class="modal-body" style="">
+        <form id="fileupload" style="" method="POST" enctype="multipart/form-data">
+        <div class="row" style="margin-bottom: 10px">
+            <div id="uploadOperaBar" class="span7">
+                <span class="btn btn-success fileinput-button"><i class="icon-upload icon-white"></i>
+                    <span>添加文件</span>
+                    <input type="file" name="files[]" multiple>
+                </span>
+                <button id="total" type="button" class="btn btn-primary start">
+                    <i class="icon-upload icon-white"></i><span>开始上传</span>
+                </button>
+                <span class="pstate text-success">准备上传</span>
+            </div>
+        </div>
+        <div class="fileupload-progress" id="totalProgressBar" style="display: none;">
+            <div class="progress">
+                <div class="bar" style="width: 0%;">
+                </div>
+            </div>
+            <div class="progress-extended">
+            </div>
+        </div>
+        <table role="presentation" style="height: 0px;" class="table table-bordered table-striped table-condensed table-hover">
+            <thead>
+                <th>
+                    文件名称
+                </th>
+                <th>
+                    大小
+                </th>
+                <th>
+                    状态
+                </th>
+                <th>
+                    操作
+                </th>
+            </thead>
+            <tbody class="files">
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
